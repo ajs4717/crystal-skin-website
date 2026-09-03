@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Misha's Crystal Skin",
+  "description": "Skin, Hair & Laser Clinic in Yerawada, Pune offering advanced personalized dermatology, aesthetic treatments, and hair care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
