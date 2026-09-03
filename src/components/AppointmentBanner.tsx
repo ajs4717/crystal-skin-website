@@ -7,11 +7,6 @@ interface AppointmentBannerProps {
 }
 
 export const AppointmentBanner: React.FC<AppointmentBannerProps> = ({ onOpenBooking }) => {
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent("Hello Dr. Misha’s Crystal Skin, I would like to schedule a clinical consultation for skin / hair.");
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-  };
-
   return (
     <section className="py-14 sm:py-20 bg-slate-50/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,14 +45,16 @@ export const AppointmentBanner: React.FC<AppointmentBannerProps> = ({ onOpenBook
                 <span>Book an Appointment</span>
               </button>
 
-              <button
-                onClick={handleWhatsApp}
+              <a
+                href="https://wa.me/919309893465"
+                target="_blank"
+                rel="noopener noreferrer"
                 id="banner-whatsapp-btn"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-xs sm:text-sm font-bold text-white bg-emerald-600/90 hover:bg-emerald-600 border border-emerald-400/40 rounded-xl shadow-md transition-all cursor-pointer backdrop-blur-xs hover:scale-[1.02]"
               >
                 <MessageSquare className="w-4 h-4 text-white" />
                 <span>WhatsApp Us</span>
-              </button>
+              </a>
             </div>
 
             {/* Micro clinical note */}

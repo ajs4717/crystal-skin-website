@@ -136,16 +136,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                 <span>Book an Appointment</span>
               </button>
 
-              <button
-                onClick={() => {
-                  const text = encodeURIComponent("Hello Dr. Misha’s Crystal Skin Clinic, I would like to enquire about consultation and treatment options.");
-                  window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-                }}
+              <a
+                href="https://wa.me/919309893465"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-3.5 rounded-xl bg-white/90 border border-teal-200 hover:bg-teal-50/50 text-teal-800 font-semibold text-xs transition-colors text-center flex items-center justify-center gap-2 shadow-xs cursor-pointer"
               >
                 <HeartHandshake className="w-4 h-4 text-teal-600" />
                 <span>WhatsApp Us</span>
-              </button>
+              </a>
             </div>
 
           </div>

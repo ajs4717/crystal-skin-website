@@ -53,11 +53,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     }
   };
 
-  const openWhatsApp = () => {
-    const text = encodeURIComponent("Hello Dr. Misha’s Crystal Skin Clinic, I would like to enquire about consultation and treatment options.");
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
       {/* Simplified Top Bar */}
@@ -118,15 +113,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
           {/* Action CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={openWhatsApp}
+            <a
+              href="https://wa.me/919309893465"
+              target="_blank"
+              rel="noopener noreferrer"
               id="nav-whatsapp-btn"
               className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-teal-700 bg-white hover:bg-teal-50/50 border border-teal-200 rounded-full shadow-xs transition-all hover:scale-[1.02] cursor-pointer"
               title="Chat with clinic on WhatsApp"
             >
               <MessageSquare className="w-3.5 h-3.5 text-teal-600" />
               <span>WhatsApp</span>
-            </button>
+            </a>
 
             <button
               onClick={() => onOpenBooking()}
@@ -185,16 +182,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   <span>Book an Appointment</span>
                 </button>
 
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openWhatsApp();
-                  }}
+                <a
+                  href="https://wa.me/919309893465"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 text-white font-semibold text-sm shadow-sm hover:bg-emerald-700 cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>

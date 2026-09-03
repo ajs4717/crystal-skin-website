@@ -70,10 +70,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
     ? SERVICES
     : SERVICES.filter(service => service.category === activeCategory);
 
-  const handleWhatsAppEnquiry = (serviceName: string) => {
-    const text = encodeURIComponent(`Hello Dr. Misha’s Crystal Skin, I would like to enquire about ${serviceName} treatment options.`);
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-  };  return (
+  return (
     <section id="treatments" className="py-20 bg-slate-50/50 relative overflow-hidden">
       {/* Frosted ambient background elements */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl pointer-events-none" />
@@ -204,13 +201,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   </button>
 
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => handleWhatsAppEnquiry(service.name)}
-                      className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-100 transition-colors"
+                    <a
+                      href="https://wa.me/919309893465"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-100 transition-colors cursor-pointer"
                       title="Enquire on WhatsApp"
                     >
                       <MessageSquare className="w-4 h-4" />
-                    </button>
+                    </a>
 
                     <button
                       onClick={() => onOpenBooking(service.name)}
@@ -297,16 +296,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <button
-                onClick={() => {
-                  handleWhatsAppEnquiry(selectedService.name);
-                  setSelectedService(null);
-                }}
-                className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors shadow-sm"
+              <a
+                href="https://wa.me/919309893465"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setSelectedService(null)}
+                className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors shadow-sm cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Enquire</span>
-              </button>
+              </a>
 
               <button
                 onClick={() => {

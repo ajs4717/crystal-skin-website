@@ -55,6 +55,7 @@ export interface ClinicInfo {
   reviewCount: number;
   phone: string;
   whatsappNumber: string;
+  whatsappUrl?: string;
   openingHours: {
     days: string;
     hours: string;

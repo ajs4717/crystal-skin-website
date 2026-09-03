@@ -40,13 +40,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedTreat
     }, 600);
   };
 
-  const handleSendToWhatsApp = () => {
-    const text = encodeURIComponent(
-      `Hello Dr. Misha’s Crystal Skin Clinic,\n\nI would like to request an appointment:\n- Name: ${formData.name}\n- Phone: ${formData.phone}\n- Treatment: ${formData.treatment}\n- Preferred Date: ${formData.preferredDate || 'Earliest Available'}\n- Message: ${formData.message || 'None'}`
-    );
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-  };
-
   const openGoogleDirections = () => {
     window.open(
       `https://www.google.com/maps/dir/?api=1&destination=Ganga+Complex+opposite+poona+business+bay+Yerawada+Pune+411006`,
@@ -187,13 +180,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedTreat
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <button
-                      onClick={handleSendToWhatsApp}
-                      className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
+                    <a
+                      href="https://wa.me/919309893465"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Send to WhatsApp</span>
-                    </button>
+                    </a>
                     
                     <button
                       onClick={() => {

@@ -17,11 +17,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent("Hello Dr. Misha’s Crystal Skin, I would like to book a consultation for skin/hair treatment.");
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-  };
-
   return (
     <section id="home" className="relative overflow-hidden bg-[#F8FAFC] pt-8 pb-16 lg:py-20">
       {/* Frosted Ambient Background Accents */}
@@ -93,14 +88,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 <ArrowRight className="w-4 h-4 ml-0.5 opacity-80" />
               </button>
 
-              <button
-                onClick={handleWhatsApp}
+              <a
+                href="https://wa.me/919309893465"
+                target="_blank"
+                rel="noopener noreferrer"
                 id="hero-whatsapp-btn"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-sm font-bold text-teal-800 bg-white hover:bg-teal-50/60 border-2 border-teal-200/80 rounded-xl shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-600" />
                 <span>WhatsApp Us</span>
-              </button>
+              </a>
             </motion.div>
 
             {/* Trust Badge Bar */}

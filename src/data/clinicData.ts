@@ -15,14 +15,17 @@ export const CLINIC_INFO: ClinicInfo = {
   landmark: "Opposite Poona Business Bay, Yerawada",
   googleRating: 4.9,
   reviewCount: 133,
-  phone: "+91 98230 00000",
-  whatsappNumber: "919823000000",
+  phone: "+91 93098 93465",
+  whatsappNumber: "919309893465",
+  whatsappUrl: "https://wa.me/919309893465",
   openingHours: {
     days: "Monday – Saturday",
     hours: "10:00 AM – 8:00 PM",
     statusText: "Open Today until 8:00 PM"
   }
 };
+
+export const WHATSAPP_URL = "https://wa.me/919309893465";
 
 export const SERVICES: ServiceItem[] = [
   // Skin Treatments

@@ -168,6 +168,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 >
                   Book an Appointment
                 </button>
+                <a
+                  href="https://wa.me/919309893465"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-white" />
+                  <span>WhatsApp: +91 93098 93465</span>
+                </a>
               </div>
             </div>
           </div>

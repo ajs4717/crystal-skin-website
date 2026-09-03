@@ -47,14 +47,6 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
     setIsSuccess(true);
   };
 
-  const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      `Hello Dr. Misha’s Crystal Skin Clinic, I would like to book an appointment:\n- Name: ${formData.name}\n- Phone: ${formData.phone}\n- Treatment: ${formData.treatment}\n- Preferred Date: ${formData.date || 'Earliest available'}\n- Time Slot: ${formData.timeSlot}\n- Notes: ${formData.notes || 'None'}`
-    );
-    window.open(`https://wa.me/${CLINIC_INFO.whatsappNumber}?text=${text}`, '_blank');
-    onClose();
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md animate-in fade-in duration-200">
       <div 
@@ -99,13 +91,16 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
             </div>
 
             <div className="flex flex-col gap-3">
-              <button
-                onClick={handleWhatsAppDirect}
+              <a
+                href="https://wa.me/919309893465"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
                 className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-colors cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Confirm Instantly via WhatsApp</span>
-              </button>
+              </a>
 
               <button
                 onClick={() => {
@@ -236,14 +231,16 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   Confirm Appointment Request
                 </button>
 
-                <button
-                  type="button"
-                  onClick={handleWhatsAppDirect}
+                <a
+                  href="https://wa.me/919309893465"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
                   className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold text-xs border border-emerald-200 transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 text-emerald-600" />
                   <span>Book via WhatsApp Instead</span>
-                </button>
+                </a>
               </div>
             </form>
           </div>
